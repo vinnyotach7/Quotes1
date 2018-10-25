@@ -1,0 +1,40 @@
+<!-- <p>
+  quote-form works!
+</p> -->
+<div class="container-fluid">
+        <div class="row">
+                <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+                <!-- Author Form -->
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text"  class="form-control" id="author" [(ngModel)]="newQuote.author" author="author" #author="ngModel" required>
+                    
+                    <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                        <p> author is Required</p>
+                        
+                    </div>
+                </div>
+                <!-- Quote Input -->
+                <div class="form-group">
+                    <label for="quote">Quote</label>
+                    <textarea class="form-control" id="quote" rows="4" [(ngModel)]="newQuote.quote" author="quote" #quote="ngModel" required></textarea>
+                    <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                        <p> quote is Required</p>
+                        
+                    </div>
+                    
+                </div>
+                <!-- Date Input -->
+                <div class="form-group">
+                    <label for="complete">Completion</label>
+                    <input type='date' id="complete" [(ngModel)]="newQuote.completeDate" author="completeDate" #completeDate="ngModel" required >
+                    <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                        <p> Complete Date is Required</p>
+                        
+                    </div>
+                </div>
+                <button type="Submit" class="btn btn-success btn-lg">Add Quote</button>
+            </form>
+        </div>
+    </div>
+
