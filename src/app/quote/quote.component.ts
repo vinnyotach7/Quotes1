@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Quote } from '../quote-class/quote';
 
 import { QuoteService } from '../quotes/quote.service';
-import {QuoteRequestService} from '../quote-http/quote-request.service';
+// import {QuoteRequestService} from '../quote-http/quote-request.service';
 
 @Component({
   selector: 'app-quote',
