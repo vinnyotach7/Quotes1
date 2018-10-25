@@ -1,0 +1,28 @@
+<!-- <p>
+  quote works!
+</p> -->
+<body>
+<h1 style = "background-image: url(">My Quotes</h1>
+<div class="container">
+    <div class="row">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+</div>
+<h1> My Quotes </h1>
+<div class="container">
+    <div class="row" *ngFor="let quote of quotes;let i = 'index'">
+        <div class="row">
+            <h4 id="{{i}}" appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+            <button class="btn btn-primary" (click)='toogleDetails(i)'>More Information</button>
+        </div>
+        
+        <div class="row" *ngIf="quote.showDescription">
+        <app-quote-details  [quote]='quote' (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
+    </div>
+    
+</div>
+
+</div>
+
+<p *ngIf='quotes.length > 5'>You have too many quotes</p>
+</body>
